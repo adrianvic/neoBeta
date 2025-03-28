@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+@font-face {
+    font-family: Minecraft;
+    src: url("MinecraftRegular-Bmg3.otf") format("opentype");
+}
+
+body {
+    font-family: Minecraft, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: black;
+    color:white;
+}
+
+header {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    color:greenyellow;
+}
+
+main {
+    outline: 2px solid gray;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+button {
+    transition: .2s;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: 1px solid white;
+}
+
+button:hover {
+    color: gray;
+    border: 1px solid gray;
+}
+
+/* #titleBox {
+    background-color: brown;
+    width: 100px;
+    height: 100px;
+    color: white;
+    text-align: center;
+    background: url("1.gif");
+    background-size: contain;
+    outline: 2px solid white;
+    margin-right: 12px;
+} */
+
+/* #titleBox:hover ~ #linksBox {
+    outline: 2px solid white;
+    height: auto;
+} */
+
+#linksBox {
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    background-color: black;
+    outline: 2px solid gray;
+    height: fit-content;
+}
+
+#headerLinks a {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0;
+    padding-left: 0;
+}
+
+#everythingHelper {
+    max-width: 60%;
+    margin: auto;
+}
+
+#headerLinks {
+    padding: 0;
+    margin-left: 10px;
+}
+
+#title {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#featured {
+    margin-top: 20px;
+    border: 2px solid greenyellow;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#featuredHelper {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.featuredProject {
+    transition: .2s;
+    height: auto;
+    width: 15%;
+    font-size: smaller;
+    padding: 4px;
+    overflow: hidden;
+}
+
+.featuredProject:hover {
+    transition: .2s;
+    outline: 4px solid gray;
+}
+
+.featuredProject img {
+    width: 100%;
+}
+
+.featuredProject p {
+    margin-right: auto;
+    margin-left: auto;
+    text-overflow: ellipsis;
+}
+
+#featured h2 {
+    font-size: medium;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+#featuredHelper {
+    gap: 10px;
+}
+
+#projectTitleSubtitle {
+    
+}
+
+#projectHeader {
+    padding-top: 20px;
+    gap: 20px;
+    display: flex;
+}
+
+#projectHeader button {
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+#projectHeader button:hover {
+    cursor: pointer;
+}
+
+#projectDescription li {
+    margin-left: 20px;
+    list-style-type: "> ";
+}
+
+#projectDescription h1, h2 {
+    margin-bottom: 8px;
+}
