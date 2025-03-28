@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-
 }
 
 @font-face {
@@ -13,6 +12,7 @@ body {
     font-family: Minecraft, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     background-color: black;
     color:white;
+    font-size : clamp(1.2rem, .2vw, 2rem);
 }
 
 header {
@@ -79,6 +79,7 @@ button:hover {
 #everythingHelper {
     max-width: 60%;
     margin: auto;
+    transform: .2s;
 }
 
 #headerLinks {
@@ -140,7 +141,8 @@ button:hover {
 }
 
 #projectTitleSubtitle {
-    
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 #projectHeader {
@@ -161,6 +163,12 @@ button:hover {
     cursor: pointer;
 }
 
+#projectHeader img {
+    outline: 2px solid gray;
+    width: 5vw;
+    height: 5vw;
+}
+
 #projectDescription li {
     margin-left: 20px;
     list-style-type: "> ";
@@ -168,4 +176,30 @@ button:hover {
 
 #projectDescription h1, h2 {
     margin-bottom: 8px;
+}
+
+@media only screen and (max-width: 1280px) {
+
+    #everythingHelper {
+        max-width: 80%;
+    }
+
+    #linksBox {
+        flex-direction: column;
+    }
+
+    #linksBox * {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media only screen and (max-width: 300px) {
+
+    #everythingHelper {
+        max-width: 90%;
+    }
+
+    
 }
