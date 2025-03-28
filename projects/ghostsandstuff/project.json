@@ -1,0 +1,11 @@
+{
+    "project": {
+      "author": "tenkuma",
+      "title": "Ghosts 'n Stuff",
+      "subtitle": "Adds a simple way to add custom commands with custom responses to your server.",
+      "backgroundImage": "projects/ghostsandstuff/ghosts.jpg",
+      "backgroundImageSize": "cover",
+      "displayLogo": true
+    }
+  }
+  

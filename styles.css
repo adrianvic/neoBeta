@@ -27,7 +27,8 @@ a {
 main {
     outline: 2px solid gray;
     margin-top: 20px;
-    padding: 10px;
+    padding: 20px;
+    background-color: black;
 }
 
 button {
@@ -35,7 +36,7 @@ button {
     background-color: black;
     color: white;
     padding: 10px;
-    border: 1px solid white;
+    outline: 1px white;
 }
 
 button:hover {
@@ -43,22 +44,15 @@ button:hover {
     border: 1px solid gray;
 }
 
-/* #titleBox {
-    background-color: brown;
-    width: 100px;
-    height: 100px;
-    color: white;
-    text-align: center;
-    background: url("1.gif");
-    background-size: contain;
-    outline: 2px solid white;
-    margin-right: 12px;
-} */
-
-/* #titleBox:hover ~ #linksBox {
-    outline: 2px solid white;
-    height: auto;
-} */
+code {
+    font-family: Minecraft, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: rgb(75, 75, 75);
+    border: 1px solid white;
+    padding-left: 4px;
+    padding-right: 4px;
+    /* margin-left: 2px;
+    margin-right: 2px; */
+}
 
 #linksBox {
     padding: 10px;
@@ -149,24 +143,31 @@ button:hover {
     padding-top: 20px;
     gap: 20px;
     display: flex;
+    text-shadow: 2px 2px gray;
 }
 
-#projectHeader button {
+#downloadButton {
+    border: 2px solid gray;
+}
+
+#downloadLink {
+    color: gray;
     height: fit-content;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: auto;
-    margin-right: 20px;
+    text-align: right;
+    text-shadow: 2px 2px black;
 }
 
-#projectHeader button:hover {
+#downloadButton:hover {
     cursor: pointer;
+    border-color: white;
 }
 
 #projectHeader img {
     outline: 2px solid gray;
-    width: 5vw;
-    height: 5vw;
+    height: 100%;
 }
 
 #projectDescription li {
@@ -175,7 +176,21 @@ button:hover {
 }
 
 #projectDescription h1, h2 {
-    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+#projectTitleAuthor {
+    display: flex;
+}
+
+#projectAuthor {
+    margin-left: 10px;
+    margin-top: auto;
+    margin-bottom: 6px;
+}
+
+#credits {
+    margin-left: auto;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -193,6 +208,29 @@ button:hover {
         margin-right: auto;
     }
 
+    #projectHeader {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #projectHeader * {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #projectAuthor {
+        margin-left: 10px;
+    }
+
+    #projectTitle {
+        margin-right: 0;
+    }
+
+    #projectHeader img {
+        width: 10vh;
+        height: 10vh;
+    }
+
 }
 
 @media only screen and (max-width: 300px) {
@@ -201,5 +239,12 @@ button:hover {
         max-width: 90%;
     }
 
+    #projectTitleAuthor {
+        flex-direction: column;
+    }
+
+    #projectAuthor {
+        margin: 0;
+    }
     
 }

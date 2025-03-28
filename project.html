@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css" media="screen">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NBeta</title>
+    <title>neoBeta</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <!-- <script src="MinecraftColorCodes.3.7.js"></script> -->
     <script src="project.js"></script>
@@ -19,27 +19,33 @@
                     <a href="index.html">mods</a> - 
                     <a href="index.html">plugins</a>
                 </ul>
+                <p id="credits">Adrian Victor, 2025 (<a href="https://git.disroot.org/adrianvictor/neoBeta">Unlicense</a>)</p>
             </div>
         </header>
         <div id="projectHeader">
             <img>
             <div id="projectTitleSubtitle">
-                <h1>Loading project...</h1>
-                <p>...</p>
+                <div id="projectTitleAuthor">
+                    <h1 id="projectTitle">Loading project...</h1>
+                    <p id="projectAuthor">by tenkuma</p>
+                </div>
+                <p id="projectSubtitle">...</p>
             </div>
-            <button>Download</button>
+            <a id="downloadLink"><button id="downloadButton">Download</button></a>
         </div>
         <main id="projectDescription">
         </main>
     </div>
     <script>
-        const downloadButton = document.querySelector("#projectHeader button");
+        const downloadButton = document.querySelector("#downloadLink");
         const header = document.querySelector("#projectHeader");
-        const headerTitle = document.querySelector("#projectHeader h1");
-        const subtitle = document.querySelector("#projectHeader p");
-        const main = document.querySelector("main");
+        const headerTitle = document.querySelector("#projectTitle");
+        const subtitle = document.querySelector("#projectSubtitle");
+        const author = document.querySelector("#projectAuthor");
         const logo = document.querySelector("#projectHeader img");
-        loadProject(projectID, headerTitle, subtitle, main, logo);
+        const main = document.querySelector("main");
+        const body = document.querySelector("body");
+        loadProject(projectID, headerTitle, subtitle, author, main, logo, downloadButton, body, body);
     </script>
     </body>
 </html>

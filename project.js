@@ -16,16 +16,36 @@ async function getProjectDescription(obj, id = projectID) {
   }
 }
 
-async function loadProject(id = projectID, objTitle, objSubtitle, objDescription, objLogo) {
+async function loadProject(id = projectID, objTitle, objSubtitle, objAuthor, objDescription, objLogo, objDownloadLink, changeColor, changeBackground) {
   try {
     const jsonData = await getProjectJSON(id);
 
     if (objTitle) objTitle.innerText = jsonData.project.title;
     if (objSubtitle) objSubtitle.innerText = jsonData.project.subtitle;
+    if (objAuthor) objAuthor.innerText = `by ${jsonData.project.author}`;
     
     if (objDescription) await getProjectDescription(objDescription, id);
-    if (objLogo) objLogo.src = `projects/${id}/logo.png`;
 
+    if (jsonData.project.downloadLink) {
+      if (objDownloadLink) objDownloadLink.href = jsonData.project.downloadLink;
+    } else {
+      if (objDownloadLink) objDownloadLink.innerText = "Download unavailable";
+    }
+
+    if (jsonData.project.displayLogo == true) {
+      if (objLogo) objLogo.src = `projects/${id}/logo.png`;
+    } else {
+      objLogo.remove();
+    }
+    if (jsonData.project.backgroundColor) {
+      changeColor.style.backgroundColor = jsonData.project.backgroundColor;
+    }
+    if (jsonData.project.backgroundImage) {
+      changeBackground.style.backgroundImage = `url(${jsonData.project.backgroundImage})`;
+    }
+    if (jsonData.project.backgroundImageSize) {
+      changeBackground.style.backgroundSize = jsonData.project.backgroundImageSize;
+    }
   } catch (error) {
     console.error("Error loading project:", error);
   }

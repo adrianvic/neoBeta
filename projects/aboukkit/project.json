@@ -1,23 +1,11 @@
 {
     "project": {
+      "author": "tenkuma",
       "title": "Aboukkit",
-      "subtitle": "A Brief Subtitle for the Project",
-      "description": "This is a placeholder description for the project. You can add details about the project's objectives, features, and goals here.",
-      "logo": "",
-      "images": [
-        {
-          "src": "images/image1.jpg",
-          "alt": "Image 1 description"
-        },
-        {
-          "src": "images/image2.jpg",
-          "alt": "Image 2 description"
-        },
-        {
-          "src": "images/image3.jpg",
-          "alt": "Image 3 description"
-        }
-      ]
+      "subtitle": "Adds a simple way to add custom commands with custom responses to your server.",
+      "downloadLink": "https://modrinth.com/plugin/aboukkit/versions",
+      "backgroundColor": "darkred",
+      "displayLogo": true
     }
   }
   
