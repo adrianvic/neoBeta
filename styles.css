@@ -102,7 +102,7 @@ code {
 
 .featuredProject {
     transition: .2s;
-    height: auto;
+    height: fit-content;
     width: 15%;
     font-size: smaller;
     padding: 4px;
@@ -121,7 +121,7 @@ code {
 .featuredProject p {
     margin-right: auto;
     margin-left: auto;
-    text-overflow: ellipsis;
+    text-overflow:clip;
 }
 
 #featured h2 {
@@ -132,6 +132,7 @@ code {
 
 #featuredHelper {
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 #projectTitleSubtitle {
@@ -218,29 +219,33 @@ code {
         margin-right: auto;
     }
 
-    #projectAuthor {
-        margin-left: 10px;
-    }
-
-    #projectTitle {
-        margin-right: 0;
-    }
-
     #projectHeader img {
         width: 10vh;
         height: 10vh;
     }
 
+    #projectTitleAuthor {
+        flex-direction: column;
+    }
+
+    /* #featuredHelper {
+        flex-direction: column;
+    } */
+
+    #featuredHelper * {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    header {
+        text-align: center;
+    }
 }
 
 @media only screen and (max-width: 300px) {
 
     #everythingHelper {
         max-width: 90%;
-    }
-
-    #projectTitleAuthor {
-        flex-direction: column;
     }
 
     #projectAuthor {

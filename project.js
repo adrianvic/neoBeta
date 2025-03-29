@@ -19,19 +19,20 @@ async function getProjectDescription(obj, id = projectID) {
 async function loadProject(id = projectID, objTitle, objSubtitle, objAuthor, objDescription, objLogo, objDownloadLink, changeColor, changeBackground) {
   try {
     const jsonData = await getProjectJSON(id);
-
+    document.title = `${jsonData.project.author}:${id}@neoBeta`
+    
     if (objTitle) objTitle.innerText = jsonData.project.title;
     if (objSubtitle) objSubtitle.innerText = jsonData.project.subtitle;
     if (objAuthor) objAuthor.innerText = `by ${jsonData.project.author}`;
     
     if (objDescription) await getProjectDescription(objDescription, id);
-
+    
     if (jsonData.project.downloadLink) {
       if (objDownloadLink) objDownloadLink.href = jsonData.project.downloadLink;
     } else {
       if (objDownloadLink) objDownloadLink.innerText = "Download unavailable";
     }
-
+    
     if (jsonData.project.displayLogo == true) {
       if (objLogo) objLogo.src = `projects/${id}/logo.png`;
     } else {
