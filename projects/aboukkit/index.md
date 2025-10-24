@@ -1,3 +1,15 @@
+---
+layout: "project.njk"
+projectName: "Aboukkit"
+projectSubtitle: "Adds a simple way to add custom commands with custom responses to your server."
+projectAuthor: "tenkuma"
+projectDownloadLink: "https://modrinth.com/plugin/aboukkit/versions"
+backgroundImageSize: "cover"
+logoName: "logo"
+logoExtension: "png"
+tags: plugin
+---
+
 ![Aboukkit logo, abboukit written in a Minecraft's logo like font painted in red.](https://cdn.modrinth.com/data/cached_images/94b1f813f8e15f82dddcffa5284c92e59cb93b27.png)
 
 This plugin adds a simple way to add custom commands that will respond users with predefined messages from ```config.yml```. It supports Minecraft's color coding (use & instead of §) ~~and placeholders for player/server info~~ (TODO).

@@ -1,0 +1,36 @@
+---
+layout: "base.njk"
+---
+
+<input type="text" id="search" placeholder="Search..." />
+<ul id="results"></ul>
+
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script>
+  fetch('search.json')
+    .then(response => response.json())
+    .then(data => {
+      const idx = lunr.Index.load(data.index);
+      const documents = data.documents;
+
+      const searchInput = document.getElementById('search');
+
+      searchInput.addEventListener('input', function () {
+        const query = this.value;
+        let results = [];
+        
+        // Perform search
+        if (query.length > 0) {
+          results = idx.search(query).map(result => {
+            const document = documents.find(doc => doc.id === result.ref);
+            return `<li><a href="${document.url}">${document.title}</a></li>`;
+          });
+
+          // Display results
+          document.getElementById('results').innerHTML = results.join('');
+        } else {
+          document.getElementById('results').innerHTML = '';
+        }
+      });
+    });
+</script>

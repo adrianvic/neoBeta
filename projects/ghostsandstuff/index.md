@@ -1,3 +1,15 @@
+---
+layout: "project.njk"
+projectName: "Ghosts 'n Stuff"
+projectSubtitle: "Adds a simple way to add custom commands with custom responses to your server."
+projectAuthor: "tenkuma"
+projectDownloadLink: "https://modrinth.com/plugin/ghosts/versions"
+backgroundImageSize: "cover"
+logoName: "logo"
+logoExtension: "png"
+tags: "plugin"
+---
+
 This plugins aims to use stuff from my library that would not fit into any plugin (or not in the way presented here) that has ~~a lot~~ (WIP) of random stuff. Everything should be togglable in the config.
 
 ## Features
