@@ -5,32 +5,33 @@ layout: "base.njk"
 <input type="text" id="search" placeholder="Search..." />
 <ul id="results"></ul>
 
-<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"
+></script>
 <script>
-  fetch('search.json')
-    .then(response => response.json())
-    .then(data => {
-      const idx = lunr.Index.load(data.index);
-      const documents = data.documents;
-
-      const searchInput = document.getElementById('search');
-
-      searchInput.addEventListener('input', function () {
-        const query = this.value;
-        let results = [];
-        
-        // Perform search
-        if (query.length > 0) {
-          results = idx.search(query).map(result => {
-            const document = documents.find(doc => doc.id === result.ref);
-            return `<li><a href="${document.url}">${document.title}</a></li>`;
-          });
-
-          // Display results
-          document.getElementById('results').innerHTML = results.join('');
-        } else {
-          document.getElementById('results').innerHTML = '';
-        }
+  fetch('/search_index.json')
+  .then(r => r.json())
+  .then(data => {
+    const idx = elasticlunr.Index.load(data);
+    const docs = idx.documentStore.docs;
+    const searchInput = document.getElementById('search');
+    const out = document.getElementById('results');
+    
+    searchInput.addEventListener('input', function () {
+      const q = this.value.trim();
+      if (!q) {
+        out.innerHTML = '';
+        return;
+      }
+      
+      const items = idx.search(q).map(r => {
+        const doc = docs[r.ref];
+        return `<li><a href="${doc.url}">${doc.title}</a></li>`;
       });
+      
+      out.innerHTML = items.join('');
     });
+    
+  });
 </script>

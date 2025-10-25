@@ -20,6 +20,6 @@
   "homepage": "https://github.com/adrianvic/neoBeta#readme",
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "lunr": "^2.3.9"
+    "elasticlunr": "^0.9.5"
   }
 }
