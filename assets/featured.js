@@ -1,7 +1,7 @@
 const featuredHelper = document.querySelector("#featuredHelper");
 
 async function getFeaturedJSON() {
-    const response = await fetch(`featured.json`);
+    const response = await fetch(`/assets/featured.json`);
     if (!response.ok) { 
         featuredHelper.innerHTML = `
         <p>;( Oopsie! Could not load featured projects...</p>
@@ -17,13 +17,11 @@ async function getFeaturedJSON() {
         featuredDiv.id = `featured-${project}`;
         featuredDiv.innerHTML = `
             <a href="project.html?id=${project}">
-                <img src="projects/${project}/logo.png">
-                <p>:${project}</p>
+                <img src="/projects/${project}/logo.png">
+                <p>${project}</p>
             </a>
         `;
         featuredHelper.appendChild(featuredDiv);
-
-        loadProject(project, document.querySelector(`featured-${project} p`), undefined, undefined, undefined, document.querySelector(`featured-${project} img`))
     });
 }
 

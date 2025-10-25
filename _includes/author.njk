@@ -11,17 +11,13 @@
     <div id="everythingHelper">
         {% include "header.njk" %}
         <div id="projectHeader">
-            {% if logoName and logoExtension %}
             <img src="{{ page.dir }}{{ logoName }}.{{ logoExtension }}">
-            {% endif %}
             <div id="projectTitleSubtitle">
                 <div id="projectTitleAuthor">
                     <h1 id="projectTitle">{{ name }}</h1>
-                    <p id="projectAuthor">by {{ author }}</p>
                 </div>
                 <p id="projectSubtitle">{{ subtitle }}</p>
             </div>
-            <a id="downloadLink" href="{{ downloadLink }}"><button id="downloadButton">Download</button></a>
         </div>
         <main id="projectDescription">
             {{ content | safe }}

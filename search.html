@@ -13,11 +13,15 @@ layout: "base.njk"
   }
 </style>
 
+<p>Welcome to neoBeta's search, here you can search through our whole database of plugins, mods and authors. You may want to filter out the results using the dropdown menu below. The search is done on your device using <a href="https://github.com/weixsong/elasticlunr.js">elasticlunr</a>.</p>
+
 <div style="display: flex; gap: .5em;">
   <input type="text" id="search" placeholder="Search..." style="flex-grow: 1;"/>
   <select name="Search mode" id="searchMode">
-    <option value="plugin" selected>Plugins</option>
+    <option value="all" selected>All</option>
+    <option value="plugin">Plugins</option>
     <option value="mod">Mods</option>
+    <option value="author">Authors</option>
   </select>
 </div>
-<div id="searchResults" style="display: flex; gap: .5em; flex-direction: column;"></div>
+<div id="searchResults" style="display: flex; gap: 1em; flex-direction: column;"></div>

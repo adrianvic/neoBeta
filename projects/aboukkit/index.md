@@ -1,9 +1,8 @@
 ---
-layout: "project.njk"
-projectName: "Aboukkit"
-projectSubtitle: "A simple way to add custom commands with custom responses to your server."
-projectAuthor: "tenkuma"
-projectDownloadLink: "https://modrinth.com/plugin/aboukkit/versions"
+name: "Aboukkit"
+subtitle: "A simple way to add custom commands with custom responses to your server."
+author: "tenkuma"
+downloadLink: "https://modrinth.com/plugin/aboukkit/versions"
 backgroundImageSize: "cover"
 logoName: "logo"
 logoExtension: "png"

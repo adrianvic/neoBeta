@@ -1,9 +1,8 @@
 ---
-layout: "project.njk"
-projectName: "Ghosts 'n Stuff"
-projectSubtitle: "Miscellaneous additions to your Minecraft server."
-projectAuthor: "tenkuma"
-projectDownloadLink: "https://modrinth.com/plugin/ghosts/versions"
+name: "Ghosts 'n Stuff"
+subtitle: "Miscellaneous additions to your Minecraft server."
+author: "tenkuma"
+downloadLink: "https://modrinth.com/plugin/ghosts/versions"
 backgroundImageSize: "cover"
 logoName: "logo"
 logoExtension: "png"
