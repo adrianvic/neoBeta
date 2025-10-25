@@ -1,7 +1,7 @@
 ---
 layout: "project.njk"
 projectName: "Aboukkit"
-projectSubtitle: "Adds a simple way to add custom commands with custom responses to your server."
+projectSubtitle: "A simple way to add custom commands with custom responses to your server."
 projectAuthor: "tenkuma"
 projectDownloadLink: "https://modrinth.com/plugin/aboukkit/versions"
 backgroundImageSize: "cover"

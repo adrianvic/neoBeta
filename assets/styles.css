@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 @font-face {
@@ -84,6 +85,10 @@ code {
 #title {
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.searchItemImage {
+    height: 1em;
 }
 
 #featured {

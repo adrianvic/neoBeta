@@ -2,7 +2,6 @@ import elasticlunr from 'elasticlunr';
 import fs from 'fs';
 
 let allPlugins = [];
-let lunrIndex = null;
 
 export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("projects/**/*.png");
@@ -11,11 +10,13 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("assets");
     
     eleventyConfig.addCollection('searchIndex', (collectionApi) => {
-        const result =  collectionApi.getFilteredByTag("plugin").map(item => {
+        const result =  collectionApi.getAll().map(item => {
             return {
                 title: item.data.projectName,
                 subtitle: item.data.projectSubtitle || "",
-                url: item.url
+                url: item.url,
+                image: (item.data.logoName && item.data.logoExtension) ? item.url + item.data.logoName + '.' + item.data.logoExtension : '',
+                tags: item.data.tags
             };
         });
         
@@ -28,6 +29,7 @@ export default function (eleventyConfig) {
             this.setRef('url');
             this.addField('title', { boost: 2 });
             this.addField('subtitle');
+            this.addField('tags')
             
             allPlugins.forEach(doc => this.addDoc(doc));
         });

@@ -1,37 +1,23 @@
 ---
 layout: "base.njk"
 ---
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+<script src="/assets/search.js" defer></script>
 
-<input type="text" id="search" placeholder="Search..." />
-<ul id="results"></ul>
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+  }
+</style>
 
-<script
-type="text/javascript"
-src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"
-></script>
-<script>
-  fetch('/search_index.json')
-  .then(r => r.json())
-  .then(data => {
-    const idx = elasticlunr.Index.load(data);
-    const docs = idx.documentStore.docs;
-    const searchInput = document.getElementById('search');
-    const out = document.getElementById('results');
-    
-    searchInput.addEventListener('input', function () {
-      const q = this.value.trim();
-      if (!q) {
-        out.innerHTML = '';
-        return;
-      }
-      
-      const items = idx.search(q).map(r => {
-        const doc = docs[r.ref];
-        return `<li><a href="${doc.url}">${doc.title}</a></li>`;
-      });
-      
-      out.innerHTML = items.join('');
-    });
-    
-  });
-</script>
+<div style="display: flex; gap: .5em;">
+  <input type="text" id="search" placeholder="Search..." style="flex-grow: 1;"/>
+  <select name="Search mode" id="searchMode">
+    <option value="plugin" selected>Plugins</option>
+    <option value="mod">Mods</option>
+  </select>
+</div>
+<div id="searchResults" style="display: flex; gap: .5em; flex-direction: column;"></div>
