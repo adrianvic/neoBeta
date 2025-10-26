@@ -1,0 +1,10 @@
+{% if images %}
+<div id="projectImageCarrousel">
+    <p>Images</p>
+    <div id="projectCarrouselImageHolder">
+        {% for image in images %}
+        <a href="{{ page.dir }}{{ image }}"><img class="projectImage" src="{{ page.dir }}{{ image }}" alt=""></a>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}

@@ -3,9 +3,7 @@ name: "Aboukkit"
 subtitle: "A simple way to add custom commands with custom responses to your server."
 author: "tenkuma"
 downloadLink: "https://modrinth.com/plugin/aboukkit/versions"
-backgroundImageSize: "cover"
-logoName: "logo"
-logoExtension: "png"
+logo: "logo.png"
 tags: plugin
 ---
 
