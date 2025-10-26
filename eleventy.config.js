@@ -11,6 +11,11 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("authors/**/*.jpg");
     eleventyConfig.addPassthroughCopy("authors/**/*.jpeg");
     eleventyConfig.addPassthroughCopy("assets");
+
+    eleventyConfig.addCollection("projects", function(collection) {
+        return collection.getFilteredByGlob("./projects/**/*.md");
+    });
+
     
     eleventyConfig.addCollection('searchIndex', (collectionApi) => {
         const result =  collectionApi.getAll().map(item => {

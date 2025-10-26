@@ -65,6 +65,10 @@ p, ul {
     padding-bottom: .6em;
 }
 
+img {
+    image-rendering: pixelated;
+}
+
 #linksBox {
     padding: 10px;
     display: flex;
@@ -102,9 +106,6 @@ p, ul {
 }
 
 #featured {
-    margin-top: 20px;
-    border: 2px solid greenyellow;
-    padding: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -117,20 +118,19 @@ p, ul {
 
 .featuredProject {
     transition: .2s;
-    height: fit-content;
     width: 15%;
     font-size: smaller;
     padding: 4px;
     overflow: hidden;
 }
 
-.featuredProject:hover {
-    transition: .2s;
-    outline: 4px solid gray;
+.featuredProjectName {
+    margin-top: auto;
 }
 
 .featuredProject img {
     width: 100%;
+    border: medium solid yellowgreen;
 }
 
 .featuredProject p {
@@ -159,11 +159,12 @@ p, ul {
     padding-top: 20px;
     gap: 20px;
     display: flex;
-    /* text-shadow: 2px 2px gray; */
 }
 
 #downloadButton {
-    border: 2px solid gray;
+    border: none;
+    background: linear-gradient(yellowgreen, green);
+    border-radius: 2px;
 }
 
 #downloadLink {
