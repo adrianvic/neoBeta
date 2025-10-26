@@ -1,11 +1,3 @@
----
-name: "TimeKeeper"
-subtitle: "Syncs real world time with your Minecraft server time."
-author: "tenkuma"
-downloadLink: "https://modrinth.com/plugin/timekeeper/versions"
-logo: "logo.png"
-tags: plugin
----
 This is a plugin for Minecraft beta that syncs the real world time with your in-game time. Logo by [malcolmriley](https://github.com/malcolmriley/unused-textures/blob/master/items/).
 
 ## How it works

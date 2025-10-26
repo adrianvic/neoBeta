@@ -51,11 +51,11 @@ button:hover {
 }
 
 code {
-    font-family: Minecraft, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     background-color: rgb(75, 75, 75);
     border: 1px solid white;
     padding-left: 4px;
     padding-right: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* margin-left: 2px;
     margin-right: 2px; */
 }
@@ -194,13 +194,14 @@ img {
     image-rendering: pixelated;
 }
 
-#projectDescription li {
+li {
     margin-left: 20px;
     list-style-type: "> ";
+    margin-bottom: .4em;
 }
 
-#projectDescription h1, h2 {
-    margin-top: 8px;
+h1, h2, h3 {
+    margin-bottom: .4em;
 }
 
 #projectTitleAuthor {
@@ -262,6 +263,10 @@ img {
 
 .searchItemDescription {
     margin-bottom: 0px;
+}
+
+.errorQuote {
+    color: gray;
 }
 
 @media only screen and (max-width: 1280px) {

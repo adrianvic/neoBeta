@@ -1,11 +1,3 @@
----
-name: "The Devil Within"
-subtitle: "Adds enchanting to Minecraft Beta. Supports balancing through curses."
-author: "tenkuma"
-downloadLink: "https://modrinth.com/plugin/devilwithin/versions"
-logo: "logo.png"
-tags: plugin
----
 This plugin is a remake of [GoldEnchant](https://dev.bukkit.org/projects/goldenchant/).
 This plugin depends on [tenkumaLib](https://modrinth.com/plugin/tenkumalib).
 

@@ -1,0 +1,8 @@
+{
+    "name": "TimeKeeper",
+    "subtitle": "Syncs real world time with your Minecraft server time.",
+    "author": "tenkuma",
+    "downloadLink": "https://modrinth.com/plugin/timekeeper/versions",
+    "logo": "logo.png",
+    "tags": ["plugin"]
+}

@@ -7,7 +7,7 @@
                     {% set projectData = item %}
                         <div class="featuredProject">
                             <a href="/projects/{{ project }}">
-                                <img src="{% if projectData.data.logoName and projectData.data.logoExtension %}/projects/{{project}}/{{ projectData.data.logoName }}.{{ projectData.data.logoExtension }}{% else %}/assets/mod-placeholder.png{% endif %}">
+                                <img src="{% if projectData.data.logo %}/projects/{{project}}/{{ projectData.data.logo }}{% else %}/assets/mod-placeholder.png{% endif %}">
                             </a>
                             <p class="featuredProjectName">{{ projectData.data.name }}</p>
                             <p>by <a href="/authors/{{ projectData.data.author }}/">{{ projectData.data.author }}</a></p>

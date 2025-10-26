@@ -1,11 +1,3 @@
----
-name: "teFreezer"
-subtitle: "Force your players to refrigerate their food by rotting food in unrefrigerated chests!"
-author: "tenkuma"
-downloadLink: "https://modrinth.com/plugin/freezer/versions"
-logo: "logo.png"
-tags: plugin
----
 ![Tefreezer written in Minecraft-like font in purple.](https://cdn.modrinth.com/data/cached_images/0aaabfb51609876ece6de83e62b9641a4635fad9_0.webp)
 
 teFreezer is a fork of [Freezer by outadoc](https://dev.bukkit.org/projects/freezer), logo by [malcolmriley](https://github.com/malcolmriley/unused-textures/blob/master/items/food_pepper.png).

@@ -1,11 +1,3 @@
----
-name: "Aboukkit"
-subtitle: "A simple way to add custom commands with custom responses to your server."
-author: "tenkuma"
-downloadLink: "https://modrinth.com/plugin/aboukkit/versions"
-logo: "logo.png"
-tags: plugin
----
 
 ![Aboukkit logo, abboukit written in a Minecraft's logo like font painted in red.](https://cdn.modrinth.com/data/cached_images/94b1f813f8e15f82dddcffa5284c92e59cb93b27.png)
 

@@ -21,11 +21,17 @@
                 </div>
                 <p id="projectSubtitle">{{ subtitle }}</p>
             </div>
-            <a id="downloadLink" href="{{ downloadLink }}"><button id="downloadButton">Download</button></a>
+            <a id="downloadLink" href="{{ downloadLink }}"><button id="downloadButton">{% if downloadLink %}Download{% else %}Unavailable{% endif %}</button></a>
         </div>
         {% include "project_image.njk" %}
         <main id="projectDescription">
-            {{ content | safe }}
+            {% if content %}
+                {{ content | safe }}
+            {% else %}
+                <h2>Oopsie! :<</h2>
+                <p>Seems like we don't have a description for this project.</p>
+                <p class="errorQuote"><i>"If only the clockworks could speak<br>I wouldn't be so alone"</i></p>
+            {% endif %}
         </main>
     </div>
     </body>

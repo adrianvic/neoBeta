@@ -1,0 +1,9 @@
+{
+    "name": "Ghosts 'n Stuff",
+    "subtitle": "Miscellaneous additions to your Minecraft server.",
+    "author": "tenkuma",
+    "downloadLink": "https://modrinth.com/plugin/ghosts/versions",
+    "images": ["anti-spam.png", "rainbow-chat.png", "skibidi-blocker.png"],
+    "logo": "logo.png",
+    "tags": ["plugin"]
+}
