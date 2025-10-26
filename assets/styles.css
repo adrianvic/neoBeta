@@ -51,13 +51,16 @@ button:hover {
 }
 
 code {
-    background-color: rgb(75, 75, 75);
-    border: 1px solid white;
-    padding-left: 4px;
-    padding-right: 4px;
+    background-color: darkslategray;
+    color: var(--accent-color);
+    /* outline: 1px solid white; */
+    padding-left: .2em;
+    padding-right: .2em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 2px;
     /* margin-left: 2px;
     margin-right: 2px; */
+    display: inline-block;
 }
 
 input, select {

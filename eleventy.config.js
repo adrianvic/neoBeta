@@ -11,6 +11,7 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("authors/**/*.jpg");
     eleventyConfig.addPassthroughCopy("authors/**/*.jpeg");
     eleventyConfig.addPassthroughCopy("assets");
+    eleventyConfig.addPassthroughCopy({ "favicon/*" : "/" });
 
     eleventyConfig.addCollection("projects", function(collection) {
         return collection.getFilteredByGlob("./projects/**/*.md");

@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/assets/styles.css" media="screen">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>neoBeta</title>
-</head>
-<body>
-    <div id="everythingHelper">
-        {% include "header.njk" %}
-        <main>
-            {{ content | safe }}
-        </main>
-    </div>
-    </body>
-</html>
+---
+layout: "skeleton.njk"
+---
+<main>
+    {{ content | safe }}
+</main>
