@@ -25,6 +25,11 @@ header {
     display: flex;
 }
 
+aside {
+    width: fit-content;
+    min-width: 20vw;
+}
+
 a {
     text-decoration: none;
     color: var(--accent-color);
@@ -53,13 +58,10 @@ button:hover {
 code {
     background-color: darkslategray;
     color: var(--accent-color);
-    /* outline: 1px solid white; */
     padding-left: .2em;
     padding-right: .2em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-radius: 2px;
-    /* margin-left: 2px;
-    margin-right: 2px; */
     display: inline-block;
 }
 
@@ -80,6 +82,7 @@ img {
 #linksBox {
     padding: 10px;
     display: flex;
+    flex-direction: column;
     width: 100%;
     background-color: black;
     outline: 2px solid gray;
@@ -94,9 +97,11 @@ img {
 }
 
 #everythingHelper {
-    max-width: 60%;
+    max-width: 80%;
     margin: auto;
     transform: .2s;
+    display: flex;
+    gap: 3em;
 }
 
 #headerLinks {
@@ -107,6 +112,7 @@ img {
 #title {
     margin-top: auto;
     margin-bottom: auto;
+    text-align: center;
 }
 
 .searchItemImage {
