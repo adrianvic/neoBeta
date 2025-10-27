@@ -1,12 +1,20 @@
 ---
 layout: "base.njk"
+styles: ["home"]
 ---
 
 {% import "featured.njk" as featured %}
 
-<h1>Welcome.</h1>
-<p>This is a project that aims to preserve Minecraft Beta mods and plugins through archives of documentation and JARs, and showcase new plugins for beta.</p>
-<h2>Featured projects</h2>
-
-{{ featured.projectShowcase(["aboukkit", "tenkumalib", "hangglidere", "devilwithin", "timekeeper", "tefreezer"], collections.projects) }}
-</ul>
+<h1>Howdy, traveler.</h1>
+<p>This website is <b class="rainbowText">the place</b> for Minecraft plugins, made with users and developers in mind. neobeta is open-source, you can find out how the website is made in our <a href="https://github.com/adrianvic/neoBeta">GitHub repository</a> <span class="dimText">(spoiler: there's some real magic going on).</span></p>
+<p>Our catalog is made by developers and community, you can get involved by following the tutorial linked <a href="/contribute">here</a>.</p>
+<div id="featureAndUpdates">
+    <div>
+        <h2>Featured projects</h2>
+        {{ featured.projectShowcase(["ghostsandstuff", "aboukkit", "tenkumalib", "hangglidere", "devilwithin", "timekeeper", "tefreezer"], collections.projects) }}
+    </div>
+    <div id="homeUpdates">
+        <h2>Latest updates</h2>
+        <p>2025-10-27: Website redesign!<br>Yaaay! neoBeta got a stylish redesign.</p>
+    </div>
+</div>

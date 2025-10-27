@@ -9,8 +9,11 @@
                             <a href="/projects/{{ project }}">
                                 <img src="{% if projectData.data.logo %}/projects/{{project}}/{{ projectData.data.logo }}{% else %}/assets/mod-placeholder.png{% endif %}">
                             </a>
-                            <p class="featuredProjectName">{{ projectData.data.name }}</p>
-                            <p>by <a href="/authors/{{ projectData.data.author }}/">{{ projectData.data.author }}</a></p>
+                            <div>
+                                <p class="featuredProjectName">{{ projectData.data.name }}</p>
+                                <p class="featuredProjectSubtitle">by <a href="/authors/{{ projectData.data.author }}/">{{ projectData.data.author }}</a></p>
+                                <div class="featuredProjectSubtitle dimText">{{ projectData.data.subtitle }}</div>
+                            </div>
                         </div>
                 {% endif %}
             {% endfor %}

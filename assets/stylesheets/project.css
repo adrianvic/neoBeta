@@ -1,0 +1,87 @@
+#projectTitle {
+    font-size: xx-large;
+}
+
+#projectTitleSubtitle {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#projectTitleSubtitle h1 {
+    margin-bottom: 0;
+}
+
+#projectHeader {
+    padding-top: 20px;
+    gap: 20px;
+    display: flex;
+}
+
+#project {
+    display: flex;
+    flex-direction: column;
+    gap: var(--box-gap);
+    width: 100%;
+}
+
+#downloadLink {
+    color: gray;
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    text-align: right;
+    /* text-shadow: 2px 2px black; */
+}
+
+#downloadButton:hover {
+    cursor: pointer;
+}
+
+#projectHeader img {
+    outline: 2px solid gray;
+    height: 5em;
+    image-rendering: pixelated;
+}
+
+#projectTitleAuthor {
+    display: flex;
+}
+
+#projectAuthor {
+    margin-left: .6em;
+    margin-top: auto;
+    /* margin-bottom: .4em; */
+}
+
+#projectImageCarrousel {
+    outline: 2px solid gray;
+    padding: 1rem;
+    height: 12em;
+    display: flex;
+    flex-direction: column;
+}
+
+#projectCarrouselImageHolder {
+    height: 100%;
+    gap: 1em;
+    overflow: auto;
+    scroll-margin-left: 10px;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.projectImage {
+    transition: .4s;
+    height: 95%;
+    max-width: 10em;
+    object-fit: cover;
+    /* filter: grayscale(); */
+}
+
+.projectImage:hover {
+    filter: none;
+    opacity: .8;
+    max-width: 100%;
+    /* object-fit: unset; */
+}

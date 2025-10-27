@@ -9,4 +9,4 @@ images: ["tenkuma-silverfish.jpg", "tenkuma-mrnando-enderdragon.jpg"]
 
 I'm tenkuma. A bear, dreamer and sometimes developer.
 
-You can found more about me on [my website](https://adrianvictor.rf.gd).
+You can find more about me on [my website](https://adrianvictor.rf.gd).

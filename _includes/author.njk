@@ -1,28 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/assets/styles.css" media="screen">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>neoBeta</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-</head>
-<body>
-    <div id="everythingHelper">
-        {% include "header.njk" %}
-        <div id="projectHeader">
-            <img src="{{ page.dir }}{{ logoName }}.{{ logoExtension }}">
-            <div id="projectTitleSubtitle">
-                <div id="projectTitleAuthor">
-                    <h1 id="projectTitle">{{ name }}</h1>
-                </div>
-                <p id="projectSubtitle">{{ subtitle }}</p>
+---
+layout: "skeleton.njk"
+styles: ["project"]
+---
+<div id="project">
+    <div id="projectHeader">
+        <img src="{{ page.dir }}{{ logoName }}.{{ logoExtension }}">
+        <div id="projectTitleSubtitle">
+            <div id="projectTitleAuthor">
+                <h1 id="projectTitle">{{ name }}</h1>
             </div>
+            <p id="projectSubtitle">{{ subtitle }}</p>
         </div>
-        {% include "project_image.njk" %}
-        <main id="projectDescription">
-            {{ content | safe }}
-        </main>
     </div>
-    </body>
-</html>
+    {% include "project_image.njk" %}
+    <main id="projectDescription">
+        {{ content | safe }}
+    </main>
+</div>

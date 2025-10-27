@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/assets/styles.css" media="screen">
+    <link rel="stylesheet" href="/assets/stylesheets/styles.css" media="screen">
+    {% for stylesheet in styles %}
+        <link rel="stylesheet" href="/assets/stylesheets/{{ stylesheet }}.css">
+    {% endfor %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if name %}{{ name }} - {% endif %}neoBeta</title>
 </head>
