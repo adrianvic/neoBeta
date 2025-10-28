@@ -6,16 +6,18 @@ pagination:
   alias: paginatedProjects
 styles: ["search"]
 ---
+<h1>Projects Index - page {{ pagination.pageNumber + 1 }}</h1>
+
 <ul style="display: flex; flex-direction: column; gap: 1em;">
   {% for project in paginatedProjects %}
     <div class="searchItem">
       <p>
         {% if project.data.logo %}
-          <img float="left" class="searchItemImage" src="{{ project.url }}{{ project.data.logo }}">
+          <img float="left" class="searchItemImage" src="{{ (project.url + project.data.logo) | url }}">
         {% endif %}
-        <a class="searchItemTitle" href="{{ project.url }}">{{ project.data.name }}</a>
+        <a class="searchItemTitle" href="{{ project.url | url }}">{{ project.data.name }}</a>
         {% if project.data.author %}
-          by <a href="/authors/{{ project.data.author }}">{{ project.data.author }}</a>
+          by <a href="{{ ('/authors/' + project.data.author) | url }}">{{ project.data.author }}</a>
         {% endif %}
       </p>
       <p class="searchItemDescription">{{ project.data.subtitle }}</p>
@@ -30,9 +32,9 @@ styles: ["search"]
 
 <nav>
   {% if pagination.href.previous %}
-    <a href="{{ pagination.href.previous }}">Prev</a>
+    <a href="{{ pagination.href.previous | url }}">Prev</a>
   {% endif %}
   {% if pagination.href.next %}
-    <a href="{{ pagination.href.next }}">Next</a>
+    <a href="{{ pagination.href.next | url }}">Next</a>
   {% endif %}
 </nav>

@@ -2,14 +2,14 @@
     <div id="linksBox">
         <div id="headerLinksAndTitle">
         <div id="logoTitle">
-            <img src="/assets/logo.png" id="logo">
+            <img src="{{ '/assets/logo.png' | url }}" id="logo">
             <h1 id="title" class="rainbowText">neoBeta</h1>
         </div>
             <ul id="headerLinks">
-                <li><a href="/">home</a></li>
-                <li><a href="/search">search</a></li>
-                <li><a href="/allprojects">index</a></li>
-                <li><a href="/contribute">contribute</a></li>
+                <li><a href="{{ '/' | url }}">home</a></li>
+                <li><a href="{{ '/search' | url }}">search</a></li>
+                <li><a href="{{ '/allprojects' | url}}">index</a></li>
+                <li><a href="{{ '/contribute' | url}}">contribute</a></li>
             </ul>
         </div>
             <p id="credits">Adrian Victor, 2025 (<a href="https://git.disroot.org/adrianvictor/neoBeta">Unlicense</a>)</p>

@@ -3,7 +3,10 @@
     <p>Images</p>
     <div id="projectCarrouselImageHolder">
         {% for image in images %}
-        <a href="{{ page.dir }}{{ image }}"><img class="projectImage" src="{{ page.dir }}{{ image }}" alt=""></a>
+        {% set dir = (page.filePathStem | default(page.url) ) | replace('/index','') %}
+        <a href="{{ (dir ~ '/' ~ image) | url }}">
+            <img class="projectImage" src="{{ (dir ~ '/' ~ image) | url }}">
+        </a>
         {% endfor %}
     </div>
 </div>

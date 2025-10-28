@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/assets/stylesheets/styles.css" media="screen">
+    <link rel="stylesheet" href="{{ '/assets/stylesheets/styles.css' | url }}" media="screen">
     {% for stylesheet in styles %}
-        <link rel="stylesheet" href="/assets/stylesheets/{{ stylesheet }}.css">
+        <link rel="stylesheet" href="{{ ('/assets/stylesheets/' + stylesheet + '.css') | url }}">
     {% endfor %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if name %}{{ name }} - {% endif %}neoBeta</title>
 </head>
 <body>
+    <script>
+        window.ELEVENTY_PATH_PREFIX = "{{ pathPrefix | safe }}";
+    </script>
     <div id="everythingHelper">
     <aside>
         {% include "header.njk" %}

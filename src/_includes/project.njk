@@ -5,16 +5,16 @@ styles: ["project"]
 <div id="project">
     <div id="projectHeader">
         {% if logo %}
-        <img src="{{ page.dir }}{{ logo }}">
+        <img src="{{ ('/projects/' + projectSlug + '/' + logo) | url }}">
         {% endif %}
         <div id="projectTitleSubtitle">
             <div id="projectTitleAuthor">
                 <h1 id="projectTitle">{{ name }}</h1>
-                <p id="projectAuthor">by <a href="/authors/{{ author }}">{{ author }}</a></p>
+                <p id="projectAuthor">by <a href="{{ ('/authors/' + author) | url }}">{{ author }}</a></p>
             </div>
             <p id="projectSubtitle">{{ subtitle }}</p>
         </div>
-        <a id="downloadLink" href="{{ downloadLink }}"><button id="downloadButton">{% if downloadLink %}Download{% else %}Unavailable{% endif %}</button></a>
+        <a id="downloadLink" href="{{ downloadLink | url}}"><button id="downloadButton">{% if downloadLink %}Download{% else %}Unavailable{% endif %}</button></a>
     </div>
     {% if links or docs or images or releases %}
     <div id="projectImagesAndInfo">
@@ -25,7 +25,7 @@ styles: ["project"]
             <p>{{ links | length }} links.</p>
             <ul>
                 {% for label, addr in links %}
-                <li><a href="{{ addr }}">{{ label }}</a></li>
+                <li><a href="{{ addr | url}}">{{ label }}</a></li>
                 {% endfor %}
             </ul>
             {% endif %}
@@ -33,7 +33,7 @@ styles: ["project"]
             <p>{{ docs | length }} documentaion files.</p>
             <ul>
                 {% for label, addr in docs %}
-                <li><a href="{{ addr }}">{{ label }}</a></li>
+                <li><a href="{{ addr | url }}">{{ label }}</a></li>
                 {% endfor %}
             </ul>
             {% endif %}

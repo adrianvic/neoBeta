@@ -3,11 +3,12 @@ import fs from 'fs';
 import path from 'path';
 
 let allPlugins = [];
+const isProd = process.env.ELEVENTY_ENV === "production";
+const pathPrefix = isProd ? "/neoBeta/" : "/";
 
 export default function (eleventyConfig) {
     eleventyConfig.setInputDirectory("src");
     eleventyConfig.setOutputDirectory("public");
-
     eleventyConfig.addPassthroughCopy("src/projects/**/*.png");
     eleventyConfig.addPassthroughCopy("src/projects/**/*.jpg");
     eleventyConfig.addPassthroughCopy("src/projects/**/*.jpeg");
@@ -15,11 +16,13 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/authors/**/*.jpg");
     eleventyConfig.addPassthroughCopy("src/authors/**/*.jpeg");
     eleventyConfig.addPassthroughCopy("src/assets");
-    eleventyConfig.addPassthroughCopy({ "favicon/*" : "/" });
+    eleventyConfig.addPassthroughCopy({ "src/favicon/*" : "/" });
     
     eleventyConfig.addCollection("projects", function(collection) {
-        return collection.getFilteredByGlob("src/projects/**/*.md");
+        return collection.getFilteredByGlob("src/projects/*/*.md");
     });
+
+    eleventyConfig.addGlobalData("pathPrefix", pathPrefix)
     
     eleventyConfig.addGlobalData("eleventyComputed", {
         projectData: (data) => {
@@ -34,11 +37,14 @@ export default function (eleventyConfig) {
             }
             return { name: path.basename(projectDir) };
         },
-        
         layout: (data) => {
             const inputPath = data.page.inputPath;
             if (inputPath.match(/\/projects\/[^\/]+\/docs\//)) return "docs.njk";
             return data.layout;
+        },
+        projectSlug: data => {
+          const url = data.page?.url || data.page?.filePathStem || "";
+          return url.replace(/\/$/,'').split('/').filter(Boolean).pop() || null;
         }
     });
     
@@ -70,4 +76,9 @@ export default function (eleventyConfig) {
         
         fs.writeFileSync('./public/search_index.json', JSON.stringify(idx));
     });
+    
+    return {
+        pathPrefix
+    }
+    
 };

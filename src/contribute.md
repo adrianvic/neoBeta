@@ -10,22 +10,15 @@ neoBeta is an open-source content management system. There are various ways you 
 
 ### Required metadata fields
  - *name* - project name.  
- ```"name": "Ghosts 'n Stuff"```
  - *subtitle* - project's brief description.  
- ```"subtitle": "Miscellaneous additions to your server."```
  - *author* - your author name, must be consistent across all your submissions.  
- ```"author": "tenkuma"```
  - *tags* - whether your project is a plugin or mod.  
- ```"tags": ["plugin", "mod"]```
 
 ### Optional metadata fields
 Please fill as many fields as possible.
  - *downloadLink* - link for when you click the download link.  
- ```"downloadLink": "https://example.com"```
  - *images* - lists of image files names or URLs that will appear in the project page.  
- ```"images": "["image1.png", "image2.png", "image3.png"]"```
  - *logo* - your logo file name or URL.  
- ```"logo": "logo.png"```
 
 ### Config file example
 ```
