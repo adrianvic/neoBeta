@@ -2,28 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/assets/stylesheets/styles.css" media="screen">
+    <link rel="stylesheet" href="/neoBeta/assets/stylesheets/styles.css" media="screen">
     
-        <link rel="stylesheet" href="/assets/stylesheets/search.css">
+        <link rel="stylesheet" href="/neoBeta/assets/stylesheets/search.css">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>neoBeta</title>
 </head>
 <body>
+    <script>
+        window.ELEVENTY_PATH_PREFIX = "/neoBeta/";
+    </script>
     <div id="everythingHelper">
     <aside>
         <header>
     <div id="linksBox">
         <div id="headerLinksAndTitle">
         <div id="logoTitle">
-            <img src="/assets/logo.png" id="logo">
+            <img src="/neoBeta/assets/logo.png" id="logo">
             <h1 id="title" class="rainbowText">neoBeta</h1>
         </div>
             <ul id="headerLinks">
-                <li><a href="/">home</a></li>
-                <li><a href="/search">search</a></li>
-                <li><a href="/allprojects">index</a></li>
-                <li><a href="/contribute">contribute</a></li>
+                <li><a href="/neoBeta/">home</a></li>
+                <li><a href="/neoBeta/search">search</a></li>
+                <li><a href="/neoBeta/allprojects">index</a></li>
+                <li><a href="/neoBeta/contribute">contribute</a></li>
             </ul>
         </div>
             <p id="credits">Adrian Victor, 2025 (<a href="https://git.disroot.org/adrianvictor/neoBeta">Unlicense</a>)</p>
@@ -33,7 +36,7 @@
     
 <main>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
-<script src="/assets/search.js" defer></script>
+<script src="/neoBeta/assets/search.js" defer></script>
 
 <style>
   main {

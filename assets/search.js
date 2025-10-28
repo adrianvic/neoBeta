@@ -1,4 +1,9 @@
-fetch('/search_index.json')
+function url(path) {
+  const prefix = (window.ELEVENTY_PATH_PREFIX || '').replace(/\/$/,'');
+  return (prefix ? prefix + '/' : '/') + path.replace(/^\/+/,'');
+}
+
+fetch(url("search_index.json"))
   .then(r => r.json())
   .then(data => {
     const idx = elasticlunr.Index.load(data);
@@ -28,7 +33,7 @@ fetch('/search_index.json')
       });
 
       return `<div class="searchItem">
-        <p>${doc.image ? `<img float=left class="searchItemImage" src="${doc.image}">` : ''} <a class="searchItemTitle" href="${doc.url}">${doc.title}</a>${doc.author ? ` by <a href="/authors/${doc.author}">${doc.author}</a>` : ''}</p>
+        <p>${doc.image ? `<img float=left class="searchItemImage" src="${url(doc.image)}">` : ''} <a class="searchItemTitle" href="${url(doc.url)}">${doc.title}</a>${doc.author ? ` by <a href="${ url('/authors/' + doc.author) }">${doc.author}</a>` : ''}</p>
         <p class="searchItemDescription">${doc.subtitle}</p>
         <div class="searchItemTagHolder">
           ${tagsHTML}
