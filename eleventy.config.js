@@ -1,12 +1,38 @@
 import elasticlunr from 'elasticlunr';
 import fs from 'fs';
 import path from 'path';
+import fetch from "node-fetch";
+import 'dotenv/config';
 
 let allPlugins = [];
 const isProd = process.env.ELEVENTY_ENV === "production";
 const pathPrefix = isProd ? "/neoBeta/" : "/";
 
 export default function (eleventyConfig) {
+    eleventyConfig.addNunjucksAsyncFilter("githubReleases", async function(owner, repo, callback) {
+        const token = process.env.GITHUB_ACCESS_TOKEN;
+        if (!owner || !repo) return callback(null, []);
+        
+        const url = `https://api.github.com/repos/${owner}/${repo}/releases`;
+        
+        try {
+            const res = await fetch(url, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    Accept: "application/vnd.github+json",
+                    "User-Agent": "eleventy-build"
+                }
+            });
+            if (!res.ok) return callback(null, [ name = "Error fetching releases for GitHub project." ]);
+            const data = await res.json();
+            callback(null, data);
+        } catch (err) {
+            console.error(err);
+            callback(null, []);
+        }
+    });
+    
+    
     eleventyConfig.setInputDirectory("src");
     eleventyConfig.setOutputDirectory("public");
     eleventyConfig.addPassthroughCopy("src/projects/**/*.png");
@@ -21,7 +47,7 @@ export default function (eleventyConfig) {
     eleventyConfig.addCollection("projects", function(collection) {
         return collection.getFilteredByGlob("src/projects/*/*.md");
     });
-
+    
     eleventyConfig.addGlobalData("pathPrefix", pathPrefix)
     
     eleventyConfig.addGlobalData("eleventyComputed", {
@@ -43,8 +69,8 @@ export default function (eleventyConfig) {
             return data.layout;
         },
         projectSlug: data => {
-          const url = data.page?.url || data.page?.filePathStem || "";
-          return url.replace(/\/$/,'').split('/').filter(Boolean).pop() || null;
+            const url = data.page?.url || data.page?.filePathStem || "";
+            return url.replace(/\/$/,'').split('/').filter(Boolean).pop() || null;
         }
     });
     
