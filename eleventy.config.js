@@ -5,17 +5,20 @@ import path from 'path';
 let allPlugins = [];
 
 export default function (eleventyConfig) {
-    eleventyConfig.addPassthroughCopy("projects/**/*.png");
-    eleventyConfig.addPassthroughCopy("projects/**/*.jpg");
-    eleventyConfig.addPassthroughCopy("projects/**/*.jpeg");
-    eleventyConfig.addPassthroughCopy("authors/**/*.png");
-    eleventyConfig.addPassthroughCopy("authors/**/*.jpg");
-    eleventyConfig.addPassthroughCopy("authors/**/*.jpeg");
-    eleventyConfig.addPassthroughCopy("assets");
+    eleventyConfig.setInputDirectory("src");
+    eleventyConfig.setOutputDirectory("public");
+
+    eleventyConfig.addPassthroughCopy("src/projects/**/*.png");
+    eleventyConfig.addPassthroughCopy("src/projects/**/*.jpg");
+    eleventyConfig.addPassthroughCopy("src/projects/**/*.jpeg");
+    eleventyConfig.addPassthroughCopy("src/authors/**/*.png");
+    eleventyConfig.addPassthroughCopy("src/authors/**/*.jpg");
+    eleventyConfig.addPassthroughCopy("src/authors/**/*.jpeg");
+    eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy({ "favicon/*" : "/" });
     
     eleventyConfig.addCollection("projects", function(collection) {
-        return collection.getFilteredByGlob("./projects/**/*.md");
+        return collection.getFilteredByGlob("src/projects/**/*.md");
     });
     
     eleventyConfig.addGlobalData("eleventyComputed", {
@@ -65,6 +68,6 @@ export default function (eleventyConfig) {
             allPlugins.forEach(doc => this.addDoc(doc));
         });
         
-        fs.writeFileSync('./_site/search_index.json', JSON.stringify(idx));
+        fs.writeFileSync('./public/search_index.json', JSON.stringify(idx));
     });
 };
