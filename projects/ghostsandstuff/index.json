@@ -5,5 +5,12 @@
     "downloadLink": "https://modrinth.com/plugin/ghosts/versions",
     "images": ["anti-spam.png", "rainbow-chat.png", "skibidi-blocker.png"],
     "logo": "logo.png",
-    "tags": ["plugin"]
+    "tags": ["plugin"],
+    "links": {
+        "GitHub": "https://github.com/adrianvic/ghostsandstuff",
+        "Disroot Git": "https://git.disroot.org/adrianvictor/ghostsandstuff"
+    },
+    "docs": {
+        "Installation" : "docs/example_documentation"
+    }
 }

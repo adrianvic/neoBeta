@@ -6,7 +6,16 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "npx @11ty/eleventy --serve"
+    "serve": "npx @11ty/eleventy --serve",
+    "watch:sass": "sass src/static/scss:public/static/css --watch",
+    "build:sass": "sass src/static/scss:public/static/css",
+    "watch:eleventy": "eleventy --serve",
+    "build:eleventy": "ELEVENTY_ENV=development eleventy",
+    "start": "npm run watch:eleventy & npm run watch:sass",
+    "build": "npm run build:eleventy & npm run build:sass",
+    "build:sass:prod": "sass src/static/scss:public/static/css --style compressed",
+    "build:eleventy:prod": "ELEVENTY_ENV=production eleventy",
+    "build:prod": "npm run build:eleventy:prod & npm run build:sass:prod"
   },
   "repository": {
     "type": "git",
@@ -20,6 +29,7 @@
   "homepage": "https://github.com/adrianvic/neoBeta#readme",
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "elasticlunr": "^0.9.5"
+    "elasticlunr": "^0.9.5",
+    "sass": "1.93.2"
   }
 }

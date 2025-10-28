@@ -16,7 +16,30 @@ styles: ["project"]
         </div>
         <a id="downloadLink" href="{{ downloadLink }}"><button id="downloadButton">{% if downloadLink %}Download{% else %}Unavailable{% endif %}</button></a>
     </div>
-    {% include "project_image.njk" %}
+    {% if links or docs or images or releases %}
+    <div id="projectImagesAndInfo">
+        {% include "project_image.njk" %}
+        <div id="projectInfo">
+            <h2>Here's what we found:</h2>
+            {% if links %}
+            <p>{{ links | length }} links.</p>
+            <ul>
+                {% for label, addr in links %}
+                <li><a href="{{ addr }}">{{ label }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% if docs %}
+            <p>{{ docs | length }} documentaion files.</p>
+            <ul>
+                {% for label, addr in docs %}
+                <li><a href="{{ addr }}">{{ label }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
     <main id="projectDescription">
         {% if content %}
         {{ content | safe }}

@@ -1,0 +1,28 @@
+#homeUpdates {
+    background-color: var(--accent-secondary);
+    border: thick solid var(--accent-color);
+    width: 50%;
+    margin: 0px 2em 2em 2em;
+    padding: 1em;
+    height: fit-content;
+    border-radius: 4px;
+}
+
+#featureAndUpdates {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+}
+
+@media only screen and (max-width: 1280px) {
+    #featureAndUpdates {
+        flex-direction: column;
+        gap: 1em;
+        flex-flow: column-reverse;
+    }
+    
+    #homeUpdates {
+        width: 100%;
+        margin: 0;
+    }
+}

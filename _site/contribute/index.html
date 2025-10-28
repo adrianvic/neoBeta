@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/stylesheets/styles.css" media="screen">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>neoBeta</title>
+</head>
+<body>
+    <div id="everythingHelper">
+    <aside>
+        <header>
+    <div id="linksBox">
+        <div id="headerLinksAndTitle">
+        <div id="logoTitle">
+            <img src="/assets/logo.png" id="logo">
+            <h1 id="title" class="rainbowText">neoBeta</h1>
+        </div>
+            <ul id="headerLinks">
+                <li><a href="/">home</a></li>
+                <li><a href="/search">search</a></li>
+                <li><a href="/allprojects">index</a></li>
+                <li><a href="/contribute">contribute</a></li>
+            </ul>
+        </div>
+            <p id="credits">Adrian Victor, 2025 (<a href="https://git.disroot.org/adrianvictor/neoBeta">Unlicense</a>)</p>
+    </div>
+</header>
+    </aside>
+    
+<main>
+    <h2>How can I get my project here?</h2>
+<p>neoBeta is an open-source content management system. There are various ways you can put your plugin/mod on our catalog:</p>
+<ul>
+<li>Clone <a href="https://github.com/adrianvic/neoBeta">neoBeta's repository</a>, create your project folder inside the /projects directory with the necessary metadata (index.md for project description, index.json for metadata and any other file your project may depend on) and make a pull request. Less manual work on our side, so review should be quickier.</li>
+<li>Open an issue on our GitHub repository with the project information. This may take longer as a contributor will have to spend time creating the project files, but is useful if you're not confortable using Git.</li>
+<li>Host your own instance of neoBeta.</li>
+</ul>
+<h3>Required metadata fields</h3>
+<ul>
+<li><em>name</em> - project name.<br>
+<code>&quot;name&quot;: &quot;Ghosts 'n Stuff&quot;</code></li>
+<li><em>subtitle</em> - project's brief description.<br>
+<code>&quot;subtitle&quot;: &quot;Miscellaneous additions to your server.&quot;</code></li>
+<li><em>author</em> - your author name, must be consistent across all your submissions.<br>
+<code>&quot;author&quot;: &quot;tenkuma&quot;</code></li>
+<li><em>tags</em> - whether your project is a plugin or mod.<br>
+<code>&quot;tags&quot;: [&quot;plugin&quot;, &quot;mod&quot;]</code></li>
+</ul>
+<h3>Optional metadata fields</h3>
+<p>Please fill as many fields as possible.</p>
+<ul>
+<li><em>downloadLink</em> - link for when you click the download link.<br>
+<code>&quot;downloadLink&quot;: &quot;https://example.com&quot;</code></li>
+<li><em>images</em> - lists of image files names or URLs that will appear in the project page.<br>
+<code>&quot;images&quot;: &quot;[&quot;image1.png&quot;, &quot;image2.png&quot;, &quot;image3.png&quot;]&quot;</code></li>
+<li><em>logo</em> - your logo file name or URL.<br>
+<code>&quot;logo&quot;: &quot;logo.png&quot;</code></li>
+</ul>
+<h3>Config file example</h3>
+<pre><code>{
+    &quot;name&quot;: &quot;Ghosts 'n Stuff&quot;,
+    &quot;subtitle&quot;: &quot;Miscellaneous additions to your server.&quot;,
+    &quot;author&quot;: &quot;tenkuma&quot;,
+    &quot;downloadLink&quot;: &quot;https://example.com&quot;,
+    &quot;images&quot;: &quot;[&quot;image1.png&quot;, &quot;image2.png&quot;, &quot;image3.png&quot;]&quot;,
+    &quot;logo&quot;: &quot;logo.png&quot;,
+    &quot;tags&quot;: [&quot;plugin&quot;, &quot;mod&quot;]
+}
+</code></pre>
+
+</main>
+    </div>
+</body>
+</html>

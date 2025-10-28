@@ -1,0 +1,10 @@
+---
+layout: skeleton.njk
+---
+<main>
+    <p>You are seeing the documentation for: <a href="{{ projectData.url }}">{{ projectData.fileSlug }}</a></p>
+    <hr>
+    <div>
+        {{ content | safe }}
+    </div>
+</main>

@@ -1,5 +1,6 @@
 import elasticlunr from 'elasticlunr';
 import fs from 'fs';
+import path from 'path';
 
 let allPlugins = [];
 
@@ -12,11 +13,31 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("authors/**/*.jpeg");
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy({ "favicon/*" : "/" });
-
+    
     eleventyConfig.addCollection("projects", function(collection) {
         return collection.getFilteredByGlob("./projects/**/*.md");
     });
-
+    
+    eleventyConfig.addGlobalData("eleventyComputed", {
+        projectData: (data) => {
+            const inputPath = data.page.inputPath;
+            if (!inputPath.match(/\/projects\/[^\/]+\/docs\//)) return null;
+            
+            const projectDir = path.dirname(path.dirname(inputPath));
+            const projectJson = path.join(projectDir, "index.json");
+            
+            if (fs.existsSync(projectJson)) {
+                return JSON.parse(fs.readFileSync(projectJson, "utf-8"));
+            }
+            return { name: path.basename(projectDir) };
+        },
+        
+        layout: (data) => {
+            const inputPath = data.page.inputPath;
+            if (inputPath.match(/\/projects\/[^\/]+\/docs\//)) return "docs.njk";
+            return data.layout;
+        }
+    });
     
     eleventyConfig.addCollection('searchIndex', (collectionApi) => {
         const result =  collectionApi.getAll().map(item => {

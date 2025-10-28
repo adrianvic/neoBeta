@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/stylesheets/styles.css" media="screen">
+    
+        <link rel="stylesheet" href="/assets/stylesheets/search.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>neoBeta</title>
+</head>
+<body>
+    <div id="everythingHelper">
+    <aside>
+        <header>
+    <div id="linksBox">
+        <div id="headerLinksAndTitle">
+        <div id="logoTitle">
+            <img src="/assets/logo.png" id="logo">
+            <h1 id="title" class="rainbowText">neoBeta</h1>
+        </div>
+            <ul id="headerLinks">
+                <li><a href="/">home</a></li>
+                <li><a href="/search">search</a></li>
+                <li><a href="/allprojects">index</a></li>
+                <li><a href="/contribute">contribute</a></li>
+            </ul>
+        </div>
+            <p id="credits">Adrian Victor, 2025 (<a href="https://git.disroot.org/adrianvictor/neoBeta">Unlicense</a>)</p>
+    </div>
+</header>
+    </aside>
+    
+<main>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+<script src="/assets/search.js" defer></script>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+</style>
+
+<p>Welcome to neoBeta's search, here you can search through our whole database of plugins, mods and authors. You may want to filter out the results using the dropdown menu below. The search is done on your device using <a href="https://github.com/weixsong/elasticlunr.js">elasticlunr</a>.</p>
+
+<div style="display: flex; gap: .5em;">
+  <input type="text" id="search" placeholder="Search..." style="flex-grow: 1;"/>
+  <select name="Search mode" id="searchMode">
+    <option value="all" selected>All</option>
+    <option value="plugin">Plugins</option>
+    <option value="mod">Mods</option>
+    <option value="author">Authors</option>
+  </select>
+</div>
+<div id="searchResults" style="display: flex; gap: 1em; flex-direction: column;"></div>
+</main>
+    </div>
+</body>
+</html>
