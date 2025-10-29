@@ -14,32 +14,13 @@ styles: ["project"]
             </div>
             <p id="projectSubtitle">{{ subtitle }}</p>
         </div>
-        <a id="downloadLink" href="{{ downloadLink | url}}"><button id="downloadButton">{% if downloadLink %}Download{% else %}Unavailable{% endif %}</button></a>
+        <a id="downloadLink" href="releases"><button id="downloadButton">{% if downloadLink %}Download{% else %}Unavailable{% endif %}</button></a>
     </div>
     {% if links or docs or images or releaseType %}
     <div id="projectImagesAndInfo">
         {% include "project_image.njk" %}
         <div id="projectInfo">
             <p>Here's what we found about this project:</p>
-            {% if releaseType %}
-            <p id="projectInfoReleases">
-                {% if releaseType == "github" %}
-                    {% set releases = githubRepoOwner | githubReleases(githubRepoName) %}
-                    Releases fetched from GitHub:<br>
-                    <div class="projectInfoGitHubReleases less">
-                        {% for release in releases %}
-                        <a href="{{ release.html_url }}">{{ release.name }}</a>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-                {% if releaseType == "local" %}
-                    <p class="rainbowText">{{ releases | length }} releases.</p>
-                    {% for label, addr in releases %}
-                    <a href="{{ addr | url }}">{{ label }}</a>
-                    {% endfor %}
-                {% endif %}
-            </p>
-            {% endif %}
             {% if links %}
             <p>{{ links | length }} links.</p>
             <ul>

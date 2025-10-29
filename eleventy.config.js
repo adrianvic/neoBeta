@@ -7,6 +7,7 @@ import 'dotenv/config';
 let allPlugins = [];
 const isProd = process.env.ELEVENTY_ENV === "production";
 const pathPrefix = isProd ? "/neoBeta/" : "/";
+const buildTime = new Date(Date.now()).toISOString();
 
 export default function (eleventyConfig) {
     eleventyConfig.addNunjucksAsyncFilter("githubReleases", async function(owner, repo, callback) {
@@ -31,8 +32,7 @@ export default function (eleventyConfig) {
             callback(null, []);
         }
     });
-    
-    
+
     eleventyConfig.setInputDirectory("src");
     eleventyConfig.setOutputDirectory("public");
     eleventyConfig.addPassthroughCopy("src/projects/**/*.png");
@@ -43,12 +43,13 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/authors/**/*.jpeg");
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy({ "src/favicon/*" : "/" });
+    eleventyConfig.addGlobalData("pathPrefix", pathPrefix);
+    eleventyConfig.addGlobalData("buildTime", buildTime);
     
     eleventyConfig.addCollection("projects", function(collection) {
-        return collection.getFilteredByGlob("src/projects/*/*.md");
+        const col = collection.getFilteredByGlob("src/projects/*/*.md");        
+        return col;
     });
-    
-    eleventyConfig.addGlobalData("pathPrefix", pathPrefix)
     
     eleventyConfig.addGlobalData("eleventyComputed", {
         projectData: (data) => {

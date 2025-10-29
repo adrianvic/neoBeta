@@ -1,0 +1,29 @@
+---
+pagination:
+    data: collections.projects
+    size: 1
+    alias: project
+permalink: "{{ project.url }}releases.html"
+layout: base.njk
+---
+<h1>Releases for {{ project.data.name }}</h1>
+
+{% if project.data.releaseType %}
+<p id="projectInfoReleases">
+    {% if project.data.releaseType == "github" %}
+        {% set releases = project.data.githubRepoOwner | githubReleases(project.data.githubRepoName) %}
+        Releases fetched from GitHub at {{ buildTime }}:<br>
+        {% for release in releases %}
+        <p><a href="{{ release.html_url }}">{{ release.name }}</a></p>
+        {% endfor %}
+    {% endif %}
+    {% if project.data.releaseType == "local" %}
+        <p class="rainbowText">{{ project.data.releases | length }} releases.</p>
+        {% for label, addr in project.data.releases %}
+        <p><a href="{{ addr | url }}">{{ label }}</a></p>
+        {% endfor %}
+    {% endif %}
+</p>
+{% else %}
+    <p>Could not find any release for this project...</p>
+{% endif %}

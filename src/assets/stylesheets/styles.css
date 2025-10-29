@@ -70,6 +70,8 @@ code {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-radius: 2px;
     display: inline-block;
+    max-width: 100%;
+    overflow-x: auto;
 }
 
 input, select {
