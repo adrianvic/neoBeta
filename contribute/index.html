@@ -50,21 +50,41 @@
 <h3>Optional metadata fields</h3>
 <p>Please fill as many fields as possible.</p>
 <ul>
-<li><em>downloadLink</em> - link for when you click the download link.</li>
 <li><em>images</em> - lists of image files names or URLs that will appear in the project page.</li>
 <li><em>logo</em> - your logo file name or URL.</li>
+</ul>
+<h3>Releases metadata</h3>
+<ul>
+<li><em>releasesType</em> - wheter your project uses <code>local</code> releases or <code>github</code>.
+For local releases:</li>
+<li><em>releases</em> - a list of relases labels and links.
+For GitHub releases:</li>
+<li><em>githubRepoOwner</em> - username of the repo owner.</li>
+<li><em>githubReponame</em> - name of the repository.</li>
 </ul>
 <h3>Config file example</h3>
 <pre><code>{
     &quot;name&quot;: &quot;Ghosts 'n Stuff&quot;,
-    &quot;subtitle&quot;: &quot;Miscellaneous additions to your server.&quot;,
+    &quot;subtitle&quot;: &quot;Miscellaneous additions to your Minecraft server.&quot;,
     &quot;author&quot;: &quot;tenkuma&quot;,
-    &quot;downloadLink&quot;: &quot;https://example.com&quot;,
-    &quot;images&quot;: &quot;[&quot;image1.png&quot;, &quot;image2.png&quot;, &quot;image3.png&quot;]&quot;,
+    &quot;downloadLink&quot;: &quot;https://modrinth.com/plugin/ghosts/versions&quot;,
+    &quot;images&quot;: [&quot;anti-spam.png&quot;, &quot;rainbow-chat.png&quot;, &quot;skibidi-blocker.png&quot;],
     &quot;logo&quot;: &quot;logo.png&quot;,
-    &quot;tags&quot;: [&quot;plugin&quot;, &quot;mod&quot;]
-}
-</code></pre>
+    &quot;tags&quot;: [&quot;plugin&quot;],
+    &quot;links&quot;: {
+        &quot;GitHub&quot;: &quot;https://github.com/adrianvic/ghostsandstuff&quot;,
+        &quot;Disroot Git&quot;: &quot;https://git.disroot.org/adrianvictor/ghostsandstuff&quot;
+    },
+    &quot;docs&quot;: {
+        &quot;Installation&quot; : &quot;docs/installation&quot;
+    },
+    &quot;releaseType&quot;: &quot;github or local&quot;,
+    &quot;githubRepoOwner&quot;: &quot;adrianvic&quot;,
+    &quot;githubRepoName&quot;: &quot;ghostsandstuff&quot;,
+    &quot;releases&quot;: {
+        &quot;test release&quot;: &quot;https://example.com/&quot;
+    }
+}```</code></pre>
 
 </main>
     </div>
