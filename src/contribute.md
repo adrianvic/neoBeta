@@ -15,20 +15,39 @@ neoBeta is an open-source content management system. There are various ways you 
  - *tags* - whether your project is a plugin or mod.  
 
 ### Optional metadata fields
-Please fill as many fields as possible.
- - *downloadLink* - link for when you click the download link.  
+Please fill as many fields as possible.  
  - *images* - lists of image files names or URLs that will appear in the project page.  
  - *logo* - your logo file name or URL.  
+
+### Releases metadata
+ - *releasesType* - wheter your project uses `local` releases or `github`.
+For local releases:
+ - *releases* - a list of relases labels and links.
+For GitHub releases:
+ - *githubRepoOwner* - username of the repo owner.
+ - *githubReponame* - name of the repository.
 
 ### Config file example
 ```
 {
     "name": "Ghosts 'n Stuff",
-    "subtitle": "Miscellaneous additions to your server.",
+    "subtitle": "Miscellaneous additions to your Minecraft server.",
     "author": "tenkuma",
-    "downloadLink": "https://example.com",
-    "images": "["image1.png", "image2.png", "image3.png"]",
+    "downloadLink": "https://modrinth.com/plugin/ghosts/versions",
+    "images": ["anti-spam.png", "rainbow-chat.png", "skibidi-blocker.png"],
     "logo": "logo.png",
-    "tags": ["plugin", "mod"]
-}
-```
+    "tags": ["plugin"],
+    "links": {
+        "GitHub": "https://github.com/adrianvic/ghostsandstuff",
+        "Disroot Git": "https://git.disroot.org/adrianvictor/ghostsandstuff"
+    },
+    "docs": {
+        "Installation" : "docs/installation"
+    },
+    "releaseType": "github or local",
+    "githubRepoOwner": "adrianvic",
+    "githubRepoName": "ghostsandstuff",
+    "releases": {
+        "test release": "https://example.com/"
+    }
+}```

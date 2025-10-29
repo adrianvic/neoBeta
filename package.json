@@ -29,7 +29,10 @@
   "homepage": "https://github.com/adrianvic/neoBeta#readme",
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
+    "dotenv": "^17.2.3",
     "elasticlunr": "^0.9.5",
+    "node-fetch": "^2.7.0",
+    "open": "^10.2.0",
     "sass": "1.93.2"
   }
 }

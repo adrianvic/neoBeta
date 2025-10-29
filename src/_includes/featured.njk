@@ -15,7 +15,7 @@
                             </a>
                             <div>
                                 <p class="featuredProjectName">{{ projectData.data.name }}</p>
-                                <p class="featuredProjectSubtitle">by <a href="{{ '/authors/' + projectData.data.author + '/' | url}}">{{ projectData.data.author }}</a></p>
+                                <p class="featuredProjectSubtitle">by <a href="{{ ('/authors/' + projectData.data.author + '/') | url}}">{{ projectData.data.author }}</a></p>
                                 <div class="featuredProjectSubtitle dimText">{{ projectData.data.subtitle }}</div>
                             </div>
                         </div>
