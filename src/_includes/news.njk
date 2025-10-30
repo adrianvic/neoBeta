@@ -1,0 +1,5 @@
+<h2>Latest updates</h2>
+{% for news in news.entries %}
+    <p>{{ news.date }} {{ news.title }}:</p>
+    <p style="opacity: .8;">{{ news.text | safe }}</p>
+{% endfor %}

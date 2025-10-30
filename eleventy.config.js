@@ -12,7 +12,12 @@ const buildTime = new Date(Date.now()).toISOString();
 export default function (eleventyConfig) {
     eleventyConfig.addNunjucksAsyncFilter("githubReleases", async function(owner, repo, callback) {
         const token = process.env.GITHUB_ACCESS_TOKEN;
-        if (!owner || !repo) return callback(null, []);
+
+        if (!owner || !repo) return callback(null, [ name = "This project is not configured properly." ]);
+        if (!token || !isProd) return callback(null, [{
+          name: "This instance cannot fetch releases from GitHub, you can check them manually here.",
+          html_url: `https://github.com/${owner}/${repo}/releases`
+        }]);
         
         const url = `https://api.github.com/repos/${owner}/${repo}/releases`;
         
@@ -26,11 +31,16 @@ export default function (eleventyConfig) {
             });
             if (!res.ok) return callback(null, [ name = "Error fetching releases for GitHub project." ]);
             const data = await res.json();
+            console.log(data)
             callback(null, data);
         } catch (err) {
             console.error(err);
             callback(null, []);
         }
+    });
+
+    eleventyConfig.addFilter("collectionFind", (collection = [], url = "") => {
+        return collection.find(item => item.url = url);
     });
 
     eleventyConfig.setInputDirectory("src");

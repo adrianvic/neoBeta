@@ -1,0 +1,14 @@
+{
+    "entries": [
+        {
+            "date": "2025-10-30",
+            "title": "Releases support",
+            "text": "Now developers can list their software version and automatically list their GitHub releases in their project page!"
+        },
+        {
+            "date": "2025-10-27",
+            "title": "Website redesign!",
+            "text": "Yaaay! neoBeta got a stylish redesign."
+        }
+    ]
+}

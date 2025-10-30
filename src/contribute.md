@@ -17,12 +17,21 @@ neoBeta is an open-source content management system. There are various ways you 
 ### Optional metadata fields
 Please fill as many fields as possible.  
  - *images* - lists of image files names or URLs that will appear in the project page.  
- - *logo* - your logo file name or URL.  
+ - *logo* - your logo file name or URL.
+ - *gameVersions* - taget Minecraft versions.
+ - *gameLoaders* - supported modloaders.
 
 ### Releases metadata
  - *releasesType* - wheter your project uses `local` releases or `github`.
+
 For local releases:
- - *releases* - a list of relases labels and links.
+ - *releases* - a list of relases labels and links.  
+    - *name* - name of the release.  
+    - *version* - version of the release.  
+    - *gameVersions* - taget Minecraft versions (overrides default value).  
+    - *gameLoaders* - supported modloaders (overrides default value).  
+    - *downloads* - list of download links for this release.
+
 For GitHub releases:
  - *githubRepoOwner* - username of the repo owner.
  - *githubReponame* - name of the repository.
@@ -47,7 +56,17 @@ For GitHub releases:
     "releaseType": "github or local",
     "githubRepoOwner": "adrianvic",
     "githubRepoName": "ghostsandstuff",
-    "releases": {
-        "test release": "https://example.com/"
-    }
-}```
+    "gameLoaders": ["Craftbukkit"]
+    "releases": [
+        {
+            "name": "The first release.",
+            "version": "1.0.0",
+            "gameVersions": ["b1.7.3"],
+            "downloads": {
+                "GitHub": "https://example.com",
+                "Modrinth": "https://modrinth.com"
+            }
+        }
+    ]
+}
+```

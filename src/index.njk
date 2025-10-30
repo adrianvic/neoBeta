@@ -11,10 +11,9 @@ styles: ["home"]
 <div id="featureAndUpdates">
     <div>
         <h2>Featured projects</h2>
-        {{ featured.projectShowcase(["ghostsandstuff", "aboukkit", "tenkumalib", "hangglidere", "devilwithin", "timekeeper", "tefreezer"], collections.projects) }}
+        {{ featured.projectShowcase(["ghostsandstuff", "devilwithin", "timekeeper", "tefreezer"], collections.projects) }}
     </div>
     <div id="homeUpdates">
-        <h2>Latest updates</h2>
-        <p>2025-10-27: Website redesign!<br>Yaaay! neoBeta got a stylish redesign.</p>
+        {% include "news.njk" %}
     </div>
 </div>

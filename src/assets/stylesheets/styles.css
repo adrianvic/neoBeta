@@ -72,6 +72,7 @@ code {
     display: inline-block;
     max-width: 100%;
     overflow-x: auto;
+    font-size: .8em;
 }
 
 input, select {
@@ -91,6 +92,10 @@ img {
 
 hr {
     margin-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-shadow:  2px 6px 5px rgba(0,0,0,0.2), 0px -4px 10px rgba(0,0,0,0.3);
 }
 
 #linksBox {
@@ -184,6 +189,16 @@ hr {
     -webkit-box-orient: vertical
 }
 
+.oneLineClamp {
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    height: 1em;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical
+}
+
 .featuredProjectSubtitle {
     padding-bottom: 0px;
 }
@@ -235,6 +250,7 @@ h1, h2, h3 {
     color: transparent;
     animation: rainbow_animation 6s ease-in-out infinite;
     background-size: 400% 100%;
+    text-shadow: none;
 }
 
 @keyframes rainbow_animation {

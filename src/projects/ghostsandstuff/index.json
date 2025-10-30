@@ -15,5 +15,7 @@
     },
     "releaseType": "github",
     "githubRepoOwner": "adrianvic",
-    "githubRepoName": "ghostsandstuff"
+    "githubRepoName": "ghostsandstuff",
+    "gameVersions": ["b1.7.3"],
+    "gameLoaders": ["Bukkit"]
 }
