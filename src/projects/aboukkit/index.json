@@ -2,7 +2,38 @@
     "name": "Aboukkit",
     "subtitle": "A simple way to add custom commands with custom responses to your server.",
     "author": "tenkuma",
-    "downloadLink": "https://modrinth.com/plugin/aboukkit/versions",
+    "links": {
+        "Modrinth": "https://modrinth.com/plugin/aboukkit/versions",
+        "GitHub": "https://github.com/adrianvic/aboukkit",
+        "Disroot Git": "https://git.disroot.org/adrianvictor/aboukkit"
+    },
     "logo": "logo.png",
-    "tags": ["plugin"]
+    "tags": ["plugin"],
+    "releaseType": "local",
+    "dependencies": ["tenkumalib"],
+    "gameVersions": "b1.7.3",
+    "gameLoaders": "Bukkit",
+    "releases": [
+        {
+            "name": "Library update",
+            "version": "2.1",
+            "downloads": {
+                "Modrinth": "https://modrinth.com/plugin/aboukkit/version/2.1"
+            }
+        },
+        {
+            "name": "Color update",
+            "version": "2.0",
+            "downloads": {
+                "Modrinth": "https://modrinth.com/plugin/aboukkit/version/2.0"
+            }
+        },
+        {
+            "name": "Vanilla",
+            "version": "1.0",
+            "downloads": {
+                "Modrinth": "https://modrinth.com/plugin/aboukkit/version/1.0"
+            }
+        }
+    ]
 }
