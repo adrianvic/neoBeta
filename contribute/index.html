@@ -52,13 +52,27 @@
 <ul>
 <li><em>images</em> - lists of image files names or URLs that will appear in the project page.</li>
 <li><em>logo</em> - your logo file name or URL.</li>
+<li><em>gameVersions</em> - taget Minecraft versions.</li>
+<li><em>gameLoaders</em> - supported modloaders.</li>
 </ul>
 <h3>Releases metadata</h3>
 <ul>
-<li><em>releasesType</em> - wheter your project uses <code>local</code> releases or <code>github</code>.
-For local releases:</li>
+<li><em>releasesType</em> - wheter your project uses <code>local</code> releases or <code>github</code>.</li>
+</ul>
+<p>For local releases:</p>
+<ul>
 <li><em>releases</em> - a list of relases labels and links.
-For GitHub releases:</li>
+<ul>
+<li><em>name</em> - name of the release.</li>
+<li><em>version</em> - version of the release.</li>
+<li><em>gameVersions</em> - taget Minecraft versions (overrides default value).</li>
+<li><em>gameLoaders</em> - supported modloaders (overrides default value).</li>
+<li><em>downloads</em> - list of download links for this release.</li>
+</ul>
+</li>
+</ul>
+<p>For GitHub releases:</p>
+<ul>
 <li><em>githubRepoOwner</em> - username of the repo owner.</li>
 <li><em>githubReponame</em> - name of the repository.</li>
 </ul>
@@ -81,10 +95,20 @@ For GitHub releases:</li>
     &quot;releaseType&quot;: &quot;github or local&quot;,
     &quot;githubRepoOwner&quot;: &quot;adrianvic&quot;,
     &quot;githubRepoName&quot;: &quot;ghostsandstuff&quot;,
-    &quot;releases&quot;: {
-        &quot;test release&quot;: &quot;https://example.com/&quot;
-    }
-}```</code></pre>
+    &quot;gameLoaders&quot;: [&quot;Craftbukkit&quot;]
+    &quot;releases&quot;: [
+        {
+            &quot;name&quot;: &quot;The first release.&quot;,
+            &quot;version&quot;: &quot;1.0.0&quot;,
+            &quot;gameVersions&quot;: [&quot;b1.7.3&quot;],
+            &quot;downloads&quot;: {
+                &quot;GitHub&quot;: &quot;https://example.com&quot;,
+                &quot;Modrinth&quot;: &quot;https://modrinth.com&quot;
+            }
+        }
+    ]
+}
+</code></pre>
 
 </main>
     </div>
