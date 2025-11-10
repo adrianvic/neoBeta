@@ -59,7 +59,7 @@ Files used in the project page can be added to it's directory and referenced rel
  - *githubReponame* - name of the repository.
 
 Example index.json for a project:
-```
+```json
 {
     "name": "Ghosts 'n Stuff",
     "subtitle": "Miscellaneous additions to your Minecraft server.",
