@@ -55,6 +55,7 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "src/favicon/*" : "/" });
     eleventyConfig.addGlobalData("pathPrefix", pathPrefix);
     eleventyConfig.addGlobalData("buildTime", buildTime);
+    eleventyConfig.addGlobalData("isProduction", isProd);
     
     eleventyConfig.addCollection("projects", function(collection) {
         const col = collection.getFilteredByGlob("src/projects/*/*.md");        

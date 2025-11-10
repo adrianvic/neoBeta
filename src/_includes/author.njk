@@ -4,7 +4,9 @@ styles: ["project"]
 ---
 <div id="project">
     <div id="projectHeader">
-        <img src="{{ page.dir }}{{ logoName }}.{{ logoExtension }}">
+        {% if logo %}
+            <img src="{{ logo | url }}">
+        {% endif %}
         <div id="projectTitleSubtitle">
             <div id="projectTitleAuthor">
                 <h1 id="projectTitle">{{ name }}</h1>
